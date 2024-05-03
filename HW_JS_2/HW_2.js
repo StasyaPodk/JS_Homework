@@ -279,6 +279,59 @@
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //  буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
 
+//let x = 0;
+
+//if (!x) {
+//    console.log('false')
+//}else{
+//    console.log('true')
+//}
+
+
 
 //
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+
+let x= coursesAndDurationArray[0].monthDuration;
+let y= coursesAndDurationArray[1].monthDuration;
+let z=coursesAndDurationArray[2].monthDuration;
+let p = coursesAndDurationArray[3].monthDuration;
+let r = coursesAndDurationArray[4].monthDuration;
+let s = coursesAndDurationArray[5].monthDuration;
+
+if (x>5){
+    console.log('Super')
+}
+
+if (y>5){
+    console.log('Super')
+}
+
+if (z>5){
+    console.log('Super')
+}
+if (p>5){
+    console.log('Super')
+    }
+
+if (r>5){
+    console.log('Super')
+}
+if (s>5){
+    console.log('Super')
+}
+
+
+
+
+
+
