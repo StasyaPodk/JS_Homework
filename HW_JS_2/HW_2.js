@@ -2,6 +2,38 @@
 // Масиви та об'єкти:
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
+let animals = [
+    {Tom: {animal_type:'cat', color: 'grey', hair: 'short',age: '5 years'}
+    },
+
+    {Kseniy: {animal_type:'cat', color: 'mixed brown-amber', hair: ' long', age: '4 years'}
+    },
+
+    {Muha: {animal_type:'cat', color: 'black-white', hair: ' long', age: '10 months'}
+    },
+
+    {Kesha: {animal_type:'bird', color: 'yellow', age: '5 months'}
+    },
+
+    '10 tigers',
+
+    '228 birds',
+
+    '13 horses',
+
+    '1 lion',
+
+    '2 hyppos',
+
+    '4 monkeys'
+    ]
+
+console.log(animals);
+
+
+
+
+
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 
