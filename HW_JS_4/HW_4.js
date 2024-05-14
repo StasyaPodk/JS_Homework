@@ -162,7 +162,7 @@ function displayObjects(objects) {
     }
 }
 
-var objects = [
+let objects = [
     {id: 1, name: 'Ivan', age: 25},
     {id: 2, name: 'Petro', age: 30},
     {id: 3, name: 'Sergiy', age: 40}
