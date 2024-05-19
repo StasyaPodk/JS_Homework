@@ -43,13 +43,22 @@ console.log(str.trim())
 
 
 
+
+
+//5.Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
+//let str = 'Ревуть воли як ясла повні';
+//let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
+
 /*
 
-5.Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 let str = 'Ревуть воли як ясла повні';
-let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
-*/
+let stringToarray = str => {
+        return str.split(' ');
+}
 
+let arr = stringToarray(str);
+console.log(arr);
+ */
 
 
 //6. є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
@@ -62,21 +71,34 @@ console.log(strings)
  */
 
 
-/*
+
 // 7. створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
-let nums = [11,21,3];
-sortNums(nums,'ascending') // [3,11,21]
-sortNums(nums,'descending') // [21,11,3]
-
-
-
- */
-
+//let nums = [11,21,3];
+//sortNums(nums,'ascending') // [3,11,21]
+//sortNums(nums,'descending') // [21,11,3]
 
 
 /*
+let sortNums = (nums, direction) => {
+    if (direction === 'ascending') {
+        return nums.sort((a, b) => a - b);
+    }  else if (direction === 'descending') {
+        return nums.sort((a, b) => b - a);
+    }  else {
+        return 'Невірне значення. Вкажіть "ascending" або "descending".';
+    }
+}
 
-- є масив
+    let nums = [11,21,3];
+    console.log(sortNums(nums, 'ascending'));
+    console.log(sortNums(nums, 'descending'));
+    console.log(sortNums(nums, 'other'));
+
+*/
+
+
+// 8. є масив
+/*
 let coursesAndDurationArray = [
 {title: 'JavaScript Complex', monthDuration: 5},
 {title: 'Java Complex', monthDuration: 6},
@@ -85,21 +107,67 @@ let coursesAndDurationArray = [
 {title: 'FullStack', monthDuration: 7},
 {title: 'Frontend', monthDuration: 4}
 ];
--- відсортувати його за спаданням за monthDuration
--- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
--- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+
+ */
+
+// 8.1 відсортувати його за спаданням за monthDuration
+/* coursesAndDurationArray.sort(function(a, b) {
+    if (a.monthDuration >= b.monthDuration) {
+        return -1;
+    } else {
+        return 1;
+    }
+});
+
+console.log(coursesAndDurationArray);
+
+ */
+
+//8.2 відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
+/*
+let filteredCourses = coursesAndDurationArray.filter(course => course.monthDuration > 5);
+
+console.log(filteredCourses);
+
+ */
+
+/*
+let sortDuration = (coursesAndDurationArray) => {
+        let coursesAndDurationArrayNew = [];
+
+    if (coursesAndDurationArray.monthDuration[i] >= coursesAndDurationArray.monthDuration[i+1] ) {
+        return {};
+    }  else  {
+        return false
+    }
+}
+sortDuration(coursesAndDurationArray)
+console.log(coursesAndDurationArrayNew)
+*/
+
+
+
+//8.3 за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+/*
+let newArray = coursesAndDurationArray.map((course, index) => ({
+  id: index + 1,
+  title: course.title,
+  monthDuration: course.monthDuration
+}));
+
+console.log(newArray);
 
  */
 
 
 
 /*
-описати колоду карт (від 6 до туза без джокерів)
-- знайти піковий туз
-- всі шістки
-- всі червоні карти
-- всі буби
-- всі трефи від 9 та більше
+//9. описати колоду карт (від 6 до туза без джокерів)
+//- знайти піковий туз
+//- всі шістки
+//- всі червоні карти
+//- всі буби
+//- всі трефи від 9 та більше
 
 {
 cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
@@ -111,7 +179,7 @@ color:'', // 'red','black'
 
 /*
 
-Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+// 10. Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
 {
 spades:[],
 diamonds:[],
@@ -122,11 +190,12 @@ clubs:[]
 
 
 
-/*
-взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
---написати пошук всіх об'єктів, в який в modules є sass
---написати пошук всіх об'єктів, в який в modules є docker
-*/
+
+
+//11. взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+//--написати пошук всіх об'єктів, в який в modules є sass
+//--написати пошук всіх об'єктів, в який в modules є docker
+
 /*
 let coursesArray = [
     {
