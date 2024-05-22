@@ -162,17 +162,62 @@ console.log(newArray);
 
 
 /*
-//9. описати колоду карт (від 6 до туза без джокерів)
-//- знайти піковий туз
-//- всі шістки
-//- всі червоні карти
-//- всі буби
-//- всі трефи від 9 та більше
+//9.1 описати колоду карт (від 6 до туза без джокерів)
+
 
 {
 cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
 value: '', // '6'-'10', 'ace','jack','queen','king','joker'
 color:'', // 'red','black'
+}
+*/
+
+let cardsuit =['spade', 'diamond', 'heart', 'clubs'];
+let value =['6', '7', '8', '9', '10', 'ace', 'jack', 'queen', 'king'];
+
+
+    let cards =cardsuit.reduce((acc, card) => {
+        value.forEach(item =>{
+
+                let color = (card=== 'diamond' || card === 'heart') ? 'red':'black';
+
+
+        acc.push({
+            cardsuit: item,
+            value: card,
+            color: color
+        })
+
+    } )
+return acc;
+},[])
+
+console.log(cards)
+
+/*
+//9.2 знайти піковий туз
+
+console.log(cards.find(card =>card.value ==="spade" && card.cardsuit==='ace'))
+
+//9.3 всі шістки
+console.log(cards.filter(card => card.cardsuit ==="6"))
+
+//-9.4 всі червоні карти
+console.log(cards.filter(card => card.color ==="red"))
+
+//9.5 всі буби
+console.log(cards.filter(card => card.value ==="diamond"))
+
+//9.6 всі трефи від 9 та більше
+
+
+for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+    if (card.value === 'clubs') {
+        if (card.cardsuit !== '6' && card.cardsuit !== '7' && card.cardsuit !== '8') {
+                  console.log(card)
+               }
+  }
 }
 */
 
