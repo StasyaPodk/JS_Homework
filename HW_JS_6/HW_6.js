@@ -171,7 +171,7 @@ value: '', // '6'-'10', 'ace','jack','queen','king','joker'
 color:'', // 'red','black'
 }
 */
-
+/*
 let cardsuit =['spade', 'diamond', 'heart', 'clubs'];
 let value =['6', '7', '8', '9', '10', 'ace', 'jack', 'queen', 'king'];
 
@@ -193,6 +193,7 @@ return acc;
 },[])
 
 console.log(cards)
+*/
 
 /*
 //9.2 знайти піковий туз
@@ -232,8 +233,23 @@ hearts:[],
 clubs:[]
 }
 */
+/*
+const callback = function(accumulator, card){
+    if(card.value === 'spade'){
+        accumulator[0].push(card);
+    } else if(card.value === 'diamond'){
+        accumulator[1].push(card);
+    } else if(card.value === 'heart') {
+        accumulator[2].push(card);
+    } else if(card.value === 'clubs') {
+        accumulator[3].push(card);
+    }
+return accumulator;
+}
+let reduce = cards.reduce(callback, [[],[],[],[]] )
 
-
+console.log(reduce)
+*/
 
 
 
@@ -241,7 +257,7 @@ clubs:[]
 //--написати пошук всіх об'єктів, в який в modules є sass
 //--написати пошук всіх об'єктів, в який в modules є docker
 
-/*
+
 let coursesArray = [
     {
         title: 'JavaScript Complex',
@@ -312,4 +328,13 @@ let coursesArray = [
     }
 ];
 
- */
+
+
+for (const course of coursesArray){
+    for (module of course.modules)
+      if(module === 'sass'){
+        console.log('sass courses:', course.title)
+      } else if(module ==='docker'){
+        console.log('docker courses:', course.title)
+    }
+}
