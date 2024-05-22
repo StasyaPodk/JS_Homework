@@ -77,7 +77,6 @@ clientsSet.sort((client1, client2) => client1.order.length - client2.order.lengt
 
 console.log(clientsSet);
 
-
  */
 
 
@@ -90,6 +89,69 @@ console.log(clientsSet);
     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
 
+function Car(model,manufacturer,year,maxSpeed,engineVolume){
+    this.model = model;
+    this.manufacturer = manufacturer;
+    this.year = year;
+    this.maxSpeed= maxSpeed;
+    this.engineVolume = engineVolume
+    this.drive = function() {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} км/год`);
+    };
+
+    this.info = function() {
+        for (const key in this) {
+             if (typeof this[key] !== 'function') {
+                 console.log(`${key} - ${this[key]}`);
+                }
+        }
+    };
+
+    this.increaseMaxSpeed = function(newSpeed) {
+        this.maxSpeed += newSpeed;
+    };
+
+    this.changeYear = function(newValue) {
+        this.year = newValue;
+    };
+
+    this.addDriver = function(driver) {
+    this.driver = driver;
+    };
+    }
+
+let car1 = new Car('fiesta', 'ford', 2012, 145, 1.5);
+let car2 = new Car('megane', 'renault', 2015, 180, 1.6);
+
+car1.drive();
+console.log('-------')
+
+car2.drive();
+console.log('--------------')
+
+car1.info();
+console.log('-------')
+
+car2.info();
+console.log('--------------')
+
+car1.increaseMaxSpeed(10);
+console.log(car1.maxSpeed);
+console.log('--------------')
+
+car1.changeYear(2014);
+console.log(car1.year)
+console.log('--------------')
+
+car1.addDriver({ name: 'Oleg', age: 34 });
+console.log(car1.driver)
+console.log('--------------')
+
+*/
+
+
+
+/*
 - (Те саме, тільки через клас)
 Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
 -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
@@ -99,7 +161,70 @@ console.log(clientsSet);
     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
 
+class Car {
+    constructor(model, manufacturer, year, maxSpeed, engineVolume) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engineVolume = engineVolume;
+    }
 
+    drive() {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} км/год`);
+    }
+
+    info() {
+        for (const key in this) {
+            if (typeof this[key] !== 'function') {
+                console.log(`${key} - ${this[key]}`);
+            }
+        }
+    }
+
+    increaseMaxSpeed(newSpeed) {
+        this.maxSpeed += newSpeed;
+    }
+
+    changeYear(newValue) {
+        this.year = newValue;
+    }
+
+    addDriver(driver) {
+        this.driver = driver;
+    }
+}
+
+let car1 = new Car('fiesta', 'ford', 2012, 145, 1.5);
+let car2 = new Car('megane', 'renault', 2015, 180, 1.6);
+
+car1.drive();
+console.log('-------')
+
+car2.drive();
+console.log('--------------')
+
+car1.info();
+console.log('-------')
+
+car2.info();
+console.log('--------------')
+
+car1.increaseMaxSpeed(20);
+console.log(car1.maxSpeed);
+console.log('--------------')
+
+car1.changeYear(2020);
+console.log(car1.year)
+console.log('--------------')
+
+car1.addDriver({ name: 'Petro', age: 28 });
+console.log(car1.driver)
+console.log('--------------')
+*/
+
+
+/*
 -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 За допомоги циклу знайти яка попелюшка повинна бути з принцом.
