@@ -231,7 +231,48 @@ console.log('--------------')
 Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
 
+function Cinderella(name,age,foot) {
+    this.name = name;
+    this.age = age;
+    this.foot = foot;
+}
 
-Через Array.prototype. створити власний foreach, filter, map
+cinderella1 = new Cinderella('Ammy',38,34);
+cinderella2 = new Cinderella('Suzy',24,34.5);
+cinderella3 = new Cinderella('Anna',18,35);
+cinderella4 = new Cinderella('Olga',16,35.5);
+cinderella5 = new Cinderella('Nata',19,36);
+cinderella6 = new Cinderella('Kseniya',25,36.5);
+cinderella7 = new Cinderella('Cleo',20,37);
+cinderella8 = new Cinderella('Robin',20,37.5);
+cinderella9 = new Cinderella('Eshli',22,38);
+cinderella10 = new Cinderella('Ana',38,38.5);
 
- */
+const cinderellaSet = [].concat(cinderella1,cinderella2,cinderella3,cinderella4,cinderella5,cinderella6,cinderella7,cinderella8,cinderella9,cinderella10)
+console.log(cinderellaSet)
+
+let prince = {
+    name: 'Andy',
+    age: 34,
+    foot: 37
+}
+
+console.log(prince)
+
+cinderellaSet.forEach(cinderella => {
+    if(cinderella.foot === prince.foot){
+        console.log(`Принц ${prince.name} знайшов свою попелюшку - ${cinderella.name}`)
+    }
+})
+
+let foundCinderella = cinderellaSet.find(cinderella => cinderella.foot === prince.foot);
+
+if (foundCinderella) {
+    console.log(`Принц ${prince.name} знайшов свою попелюшку- ${foundCinderella.name}`);
+} else {
+    console.log('Попелюшка не знайдена');
+}
+*/
+
+//Через Array.prototype. створити власний foreach, filter, map
+
