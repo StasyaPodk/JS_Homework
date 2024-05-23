@@ -274,5 +274,61 @@ if (foundCinderella) {
 }
 */
 
-//Через Array.prototype. створити власний foreach, filter, map
+//Через Array.prototype.  створити власний foreach, filter, map
 
+Array.prototype.customForEach = function(callback) {
+    for (let i = 0; i < this.length; i++) {
+        const user = this[i];
+        if(user.age >= 18 && user.age <= 65) {
+            callback(user,i,this);
+            console.log(`Зателефонувати користувачу ${user.name} за телефоном ${user.phone}`);
+        }
+    }
+};
+
+Array.prototype.customFilter = function(callback){
+    const filteredArray = [];
+    for (let i = 0; i < this.length; i++) {
+        const user = this[i];
+            if (user.age>30){
+            filteredArray.push(this[i]);
+        }
+    }
+    return filteredArray;
+
+}
+
+
+Array.prototype.customMap = function(mapping) {
+    const mappedArray = [];
+    for (let i = 0; i < this.length; i++) {
+         mappedArray.push(mapping(this[i]));
+    }
+    return mappedArray;
+};
+
+
+
+
+const users = [
+    { id: 1, name: 'Vasya', surname: 'Petechkin', age: 34, phone: '1113455678' },
+    { id: 2, name: 'Kolya', surname: 'Petrov', age: 78, phone: '222280299' },
+    { id: 3, name: 'Igor', surname: 'Petechkin', age: 18, phone: '3333235678' },
+    { id: 4, name: 'Vadim', surname: 'Petrovich', age: 13, phone: '44445380299' }
+];
+
+users.customForEach((user) => {
+});
+
+
+
+const filteredArray = users.customFilter((user) => {
+});
+console.log(filteredArray)
+
+
+
+const mappedArray = users.customMap((user) => {
+    return user.surname;
+});
+console.log(mappedArray);
