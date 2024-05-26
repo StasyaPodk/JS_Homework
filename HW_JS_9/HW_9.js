@@ -127,6 +127,7 @@ for (course of coursesAndDurationArray){
 Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
 Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
 */
+
 /*
 let simpsons = [
     {
@@ -185,8 +186,8 @@ for (simpson of simpsons){
     div.append(img)
     document.body.appendChild(div);
 }
+*/
 
- */
 
 
 
@@ -271,3 +272,36 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
+
+coursesArray.forEach(course => {
+    let courseBlock = document.createElement('div');
+    courseBlock.classList.add('course');
+    let titleHeader = document.createElement('h2');
+    titleHeader.innerText = course.title;
+    titleHeader.classList.add('title');
+    courseBlock.appendChild(titleHeader);
+
+
+    let propertiesBlock = document.createElement('div');
+    let duration = document.createElement('p');
+    duration.innerText = `Duration: ${course.monthDuration} months, Total Hours: ${course.hourDuration}`;
+    duration.classList.add('duration');
+    propertiesBlock.appendChild(duration);
+
+
+    let modulesBlock = document.createElement('div');
+    modulesBlock.classList.add('modules');
+
+    course.modules.forEach(module => {
+        let moduleDiv = document.createElement('div');
+        let moduleText = document.createElement('p');
+        moduleText.innerText = module;
+
+        moduleDiv.appendChild(moduleText);
+        modulesBlock.appendChild(moduleDiv);
+    });
+
+    propertiesBlock.appendChild(modulesBlock);
+    courseBlock.appendChild(propertiesBlock);
+    document.body.appendChild(courseBlock);
+});
