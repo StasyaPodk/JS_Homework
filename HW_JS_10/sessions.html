@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sessions</title>
+</head>
+<body>
+<div id="sessionsList"></div>
+
+<script>
+
+    let sessions = JSON.parse(localStorage.getItem("sessions")) || [];
+    let sessionsList = document.getElementById("sessionsList");
+
+    sessions.forEach(function(session, index) {
+        let sessionDiv = document.createElement("div");
+        sessionDiv.textContent = "Session " + (index + 1) + ": " + session.toLocaleString();
+        sessionsList.appendChild(sessionDiv);
+    });
+
+
+
+</script>
+
+</body>
+</html>
