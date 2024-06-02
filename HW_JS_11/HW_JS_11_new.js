@@ -113,7 +113,7 @@ fetch('http://jsonplaceholder.typicode.com/users')
                 .then(response => response.json())
                 .then(user => {
                     userDetailsContainer.innerHTML = `
-                                <h2>Інформація про користувача</h2>
+                                <h2>Інформація про користувача</h2> 
                                 <p><strong>ID:</strong> ${user.id}</p>
                                 <p><strong>Ім'я:</strong> ${user.name}</p>
                                 <p><strong>Імейл:</strong> ${user.email}</p>
